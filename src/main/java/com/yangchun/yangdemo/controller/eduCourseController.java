@@ -40,6 +40,7 @@ public class eduCourseController {
     String string = JSONObject.toJSONString(map, SerializerFeature.WriteNullStringAsEmpty);
 
     System.out.println("我是master");
+    System.out.println("我是Dev分支");
     ThreadLocal t =new ThreadLocal();
     return string;
   }
