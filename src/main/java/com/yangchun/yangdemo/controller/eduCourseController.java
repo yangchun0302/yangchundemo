@@ -40,8 +40,7 @@ public class eduCourseController {
     String string = JSONObject.toJSONString(map, SerializerFeature.WriteNullStringAsEmpty);
     long totalMemory = Runtime.getRuntime().totalMemory()/1024/1024;
     long maxMemory = Runtime.getRuntime().maxMemory()/1024/1024;
-    log.info("初始内存是:{}",totalMemory);
-    log.info("最大内存:{}",maxMemory);
+
     ThreadLocal t =new ThreadLocal();
     return string;
   }
