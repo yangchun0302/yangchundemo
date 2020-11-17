@@ -38,8 +38,7 @@ public class eduCourseController {
     map.put("eduCourse", eduCourse);
 
     String string = JSONObject.toJSONString(map, SerializerFeature.WriteNullStringAsEmpty);
-    long totalMemory = Runtime.getRuntime().totalMemory()/1024/1024;
-    long maxMemory = Runtime.getRuntime().maxMemory()/1024/1024;
+
 
     ThreadLocal t =new ThreadLocal();
     return string;
