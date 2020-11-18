@@ -9,6 +9,7 @@ import com.yangchun.yangdemo.service.eduSubjectService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,10 +29,10 @@ public class eduCourseController {
 
   @Autowired private eduSubjectService eduSubjectService;
 
-  @GetMapping("/yangchun")
-  public String json() {
-    eduSubject eduSubject = eduSubjectService.selectbyId("1271031333719699457");
-    eduCourse eduCourse = eduCourseService.selectbyid("1271284233452666882");
+  @GetMapping("/yangchun/{id}/{id2}")
+  public String json(@PathVariable String id,@PathVariable String id2) {
+    eduSubject eduSubject = eduSubjectService.selectbyId(id);
+    eduCourse eduCourse = eduCourseService.selectbyid(id2);
 
     Map<String, Object> map = new HashMap<>();
     map.put("eduSubject", eduSubject);
@@ -39,9 +40,7 @@ public class eduCourseController {
 
     String string = JSONObject.toJSONString(map, SerializerFeature.WriteNullStringAsEmpty);
 
-    System.out.println("我是master");
-    System.out.println("我是Dev分支");
-    ThreadLocal t =new ThreadLocal();
+
     return string;
   }
 }
