@@ -45,10 +45,16 @@ public class eduCourseController {
   public R test(@RequestBody eduCourse eduCourse) {
     int i = eduCourseService.save(eduCourse);
     if (i != 0) {
+      System.out.println("你好");
       return R.ok();
     }
     return R.error();
   }
+
+
+
+
+
 
 
 
