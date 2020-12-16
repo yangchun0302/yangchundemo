@@ -11,4 +11,6 @@ import org.springframework.stereotype.Component;
 public interface eduCourseService {
 
     eduCourse selectbyid(String id);
+
+    int save(eduCourse eduCourse);
 }

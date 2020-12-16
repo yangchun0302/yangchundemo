@@ -2,6 +2,7 @@ package com.yangchun.yangdemo.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.yangchun.yangdemo.comont.R;
 import com.yangchun.yangdemo.pojo.eduCourse;
 import com.yangchun.yangdemo.pojo.eduSubject;
 import com.yangchun.yangdemo.service.eduCourseService;
@@ -27,7 +28,7 @@ public class eduCourseController {
   @Autowired private eduSubjectService eduSubjectService;
 
   @GetMapping("/yangchun/{id}/{id2}")
-  public String json(@PathVariable String id,@PathVariable String id2) {
+  public String json(@PathVariable String id, @PathVariable String id2) {
     eduSubject eduSubject = eduSubjectService.selectbyId(id);
     eduCourse eduCourse = eduCourseService.selectbyid(id2);
 
@@ -37,8 +38,15 @@ public class eduCourseController {
 
     String string = JSONObject.toJSONString(map, SerializerFeature.WriteNullStringAsEmpty);
 
-
     return string;
   }
 
+  @PostMapping("/edu")
+  public R test(@RequestBody eduCourse eduCourse) {
+    int i = eduCourseService.save(eduCourse);
+    if (i != 0) {
+      return R.ok();
+    }
+    return R.error();
+  }
 }

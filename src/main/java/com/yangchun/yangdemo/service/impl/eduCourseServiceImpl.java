@@ -23,4 +23,11 @@ private eduCourseMapper eduCourseMapper;
         eduCourse eduCourse = eduCourseMapper.selectByPrimaryKey(id);
         return eduCourse;
     }
+
+    @Override
+    public int save(eduCourse eduCourse) {
+        int insert = eduCourseMapper.insert(eduCourse);
+
+        return insert;
+    }
 }

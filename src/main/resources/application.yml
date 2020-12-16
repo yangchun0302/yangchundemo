@@ -3,7 +3,7 @@ server:
 spring:
   datasource:
     name: test
-    url: jdbc:mysql://192.168.0.108:3306/guli?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://192.168.0.109:3306/guli?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
     username: root
     password: yangchun0302.
     # 使用druid数据源

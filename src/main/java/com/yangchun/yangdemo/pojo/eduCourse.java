@@ -7,6 +7,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 @Data
 public class eduCourse {
+
     private String id;
 
     private String teacherId;
