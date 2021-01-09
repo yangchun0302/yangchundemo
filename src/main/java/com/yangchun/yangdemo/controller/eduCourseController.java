@@ -49,22 +49,5 @@ public class eduCourseController {
       return R.ok();
     }
     return R.error();
-
-
-
-  }
-
-
-
-
-
-
-
-
-
-
-
-  public static void main(String[] args) {
-    System.out.println("努力学习");
   }
 }
